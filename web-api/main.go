@@ -1,8 +1,5 @@
 //I go to an endpoint, get some JSON
 package main
-email:
-Eno Compton
-enocom@google.com
 
 import (
 	"encoding/json"
@@ -19,6 +16,7 @@ func main() {
 	}
 }
 
+//Response : huh"
 type Response struct {
 	Message string `json:"message"`
 }
