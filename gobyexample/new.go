@@ -1,11 +1,27 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
+
+const s string = "constant"
 
 func main() {
-	var a = "Iniital"
-	fmt.Println(a)
+	fmt.Println(s)
 
-	f := "short"
-	fmt.Println(f)
+	const n = 500000000
+
+	const d = 3e20 / n
+	fmt.Println(d)
+
+	fmt.Println(math.Sin(n))
+	fmt.Println(int64(d))
+
+	if 7%2 == 0 {
+		fmt.Println("7 is even")
+	} else {
+		fmt.Println("7 is odd")
+	}
+
 }
