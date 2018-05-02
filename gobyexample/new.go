@@ -2,26 +2,29 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
 const s string = "constant"
 
 func main() {
-	fmt.Println(s)
+	m := make(map[string]int)
 
-	const n = 500000000
+	m["k1"] = 7
+	m["k2"] = 13
 
-	const d = 3e20 / n
-	fmt.Println(d)
+	fmt.Println("map:", m)
 
-	fmt.Println(math.Sin(n))
-	fmt.Println(int64(d))
+	v1 := m["k1"]
+	fmt.Println("v1", v1)
 
-	if 7%2 == 0 {
-		fmt.Println("7 is even")
-	} else {
-		fmt.Println("7 is odd")
-	}
+	fmt.Println("len:", len(m))
 
+	delete(m, "k2")
+	fmt.Println("map:", m)
+
+	_, prs := m["k2"]
+	fmt.Println("prs:", prs)
+
+	n := map[string]int{"foo": 1, "bar": 2}
+	fmt.Println("map:", n)
 }
