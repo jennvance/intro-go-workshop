@@ -4,24 +4,23 @@ import (
 	"fmt"
 )
 
-type person struct {
-	name string
-	age  int
+func zeroval(ival int) {
+	ival = 0
 }
 
-func sum(nums ...int) {
-	fmt.Print(nums, " ")
-	total := 0
-	for _, num := range nums {
-		total += num
-	}
-	fmt.Println(total)
+func zeroptr(iptr *int) {
+	*iptr = 0
 }
 
 func main() {
-	sum(1, 2)
-	sum(1, 2, 3)
+	i := 1
+	fmt.Println("initial:", i)
 
-	nums := []int{1, 2, 3, 4}
-	sum(nums...)
+	zeroval(i)
+	fmt.Println("zeroval:", i)
+
+	zeroptr(&i)
+	fmt.Println("zeroptr:", i)
+
+	fmt.Println("pointer:", &i)
 }
