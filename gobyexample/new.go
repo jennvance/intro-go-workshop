@@ -4,21 +4,15 @@ import (
 	"fmt"
 )
 
-func intSeq() func() int {
-	i := 0
-	return func() int {
-		i++
-		return i
-	}
+func vals() (int, int) {
+	return 3, 7
 }
 
 func main() {
-	nextInt := intSeq()
+	a, b := vals()
+	fmt.Println(a)
+	fmt.Println(b)
 
-	fmt.Println(nextInt())
-	fmt.Println(nextInt())
-	fmt.Println(nextInt())
-
-	newInts := intSeq()
-	fmt.Println(newInts())
+	_, c := vals()
+	fmt.Println(c)
 }
